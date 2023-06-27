@@ -1,5 +1,5 @@
 body {
-  background-color: blanchedalmond;
+  background-color: #85dcb8;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,10 +7,19 @@ body {
   gap: 3rem;
 }
 
+#content {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
 #img {
   width: 50%;
   border: 2px solid green;
   height: 40%;
+  border-radius: 15px;
 }
 
 #title {
@@ -22,37 +31,40 @@ body {
 }
 
 #btn {
-  background-color: #0a0a23;
-  color: #fff;
-  border: none;
+  background-color: #85dcb8;
+  color: #000;
+  border: 3px solid #41b3a3;
   border-radius: 10px;
   padding: 15px;
   min-height: 30px;
-  min-width: 120px;
+  width: 20%;
+  font-size: larger;
 }
 
 #btn:hover {
-  background-color: #002ead;
+  background-color: #41b3a3;
   transition: 0.5s;
 }
 
-#btn:focus {
+#btn:focus,
+#searchField:focus {
   outline-color: transparent;
   outline-style: solid;
-  box-shadow: 0 0 0 4px #5a01a7;
+  box-shadow: 0 0 0 4px #41b3a3;
 }
 
 #btn:active {
-  background-color: #ffbf00;
+  background-color: #85dcb4;
 }
 
 #searchField {
-  background-color: #0a0a23;
-  color: #fff;
-  border: none;
+  background-color: #85dcb8;
+  color: #000;
+  border: 3px solid #41b3a3;
   border-radius: 10px;
   padding: 15px;
   width: 30%;
+  font-size: medium;
 }
 
 .footer {
@@ -75,4 +87,19 @@ body {
 #icon:hover {
   transform: rotate(360deg) scale(1.2);
   transition: transform 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 550px) {
+  .footer {
+    font-size: 1rem;
+  }
+
+  #btn {
+    width: 30%;
+    font-size: medium;
+  }
+
+  #searchField {
+    width: 80%;
+  }
 }
