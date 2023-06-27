@@ -8,19 +8,36 @@
   </head>
   <body>
     <h1 id="title">Meme Generator</h1>
+    <input
+      type="text"
+      placeholder="Search here..."
+      id="searchField"
+      value="welcome"
+    />
     <img id="img" src="#" />
+    <button id="btn" onClick="onGifClick()">New Giffy</button>
+
     <script>
-      const img = document.querySelector("img");
-      fetch(
-        "https://api.giphy.com/v1/gifs/translate?api_key=2gAnrnGtbJHZWpmoJlzHp6kdV2ntThSd&s=cats",
-        { mode: "cors" }
-      )
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (response) {
-          img.src = response.data.images.original.url;
-        });
+      function onGifClick() {
+        const search = document.querySelector("#searchField");
+        const img = document.querySelector("img");
+        const btn = document.querySelector("button");
+        debugger;
+        fetch(
+          `https://api.giphy.com/v1/gifs/translate?api_key=2gAnrnGtbJHZWpmoJlzHp6kdV2ntThSd&s=` +
+            search.value,
+          {
+            mode: "cors",
+          }
+        )
+          .then((response) => {
+            return response.json();
+          })
+          .then((response) => {
+            img.src = response.data.images.original.url;
+          });
+      }
+      onGifClick();
     </script>
   </body>
 </html>
